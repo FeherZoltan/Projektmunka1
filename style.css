@@ -5,8 +5,7 @@ body { padding-bottom: 40px; }
 
 .list-group-item { cursor: pointer; }
 .list-group-item input { margin-right: 10px; }
-<<<<<<< HEAD
-=======
+
 
 body{
 	padding:1.5rem 1rem 3rem;
@@ -26,4 +25,3 @@ body{
 .btn-success{ background: (#28a745,#1e7e34); border:0; }
 
 
->>>>>>> 5069b152a7c49b4fd77b7949d6891af3458c48d3
