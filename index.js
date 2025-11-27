@@ -49,6 +49,103 @@ const quizQuestions = [
         corrects: 2
     }
 ]
-const quizDiv = document.getElementById("quiz");
-const tableBody = document.querySelector("answerstable and body");
+let current = 0;
+const id = `q${n}_c${i}`;
+const label = document.createElement('label');
+label.style.display = 'block';
+label.style.cursor = 'pointer';
+
+
+const radio = document.createElement('input');
+radio.type = 'radio';
+radio.name = `q${n}`;
+radio.value = i;
+radio.id = id;
+
+
+radio.addEventListener('change', () => {
+answers.querySelectorAll('label').forEach(l => l.style.background = '');
+label.style.background = '#eef';
+});
+
+
+label.appendChild(radio);
+const span = document.createElement('span');
+span.textContent = ' ' + choice;
+label.appendChild(span);
+answers.appendChild(label);
+;
+
+
+quizArea.appendChild(answers);
+
+
+
+function getChosen(qIndex){
+const radios = document.getElementsByName(`q${qIndex}`);
+for(const r of radios) if(r.checked) return Number(r.value);
+return null;
+}
+
+
+function logAnswer(qIndex){
+const chosen = getChosen(qIndex);
+const tr = document.createElement('tr');
+const no = document.createElement('td'); no.textContent = logTbody.children.length + 1;
+const qCell = document.createElement('td'); qCell.textContent = questions[qIndex].q;
+const chosenCell = document.createElement('td'); chosenCell.textContent = chosen === null ? '—' : questions[qIndex].choices[chosen];
+const okCell = document.createElement('td');
+
+
+if(chosen === null){
+okCell.textContent = 'Nem válaszolt';
+okCell.className = '';
+} else if(chosen === questions[qIndex].a){
+okCell.textContent = 'Igen';
+okCell.className = 'correct';
+} else {
+okCell.textContent = 'Nem';
+okCell.className = 'wrong';
+}
+
+
+tr.appendChild(no); tr.appendChild(qCell); tr.appendChild(chosenCell); tr.appendChild(okCell);
+logTbody.appendChild(tr);
+
+
+if(chosen === questions[qIndex].a) score += 1;
+}
+
+
+nextBtn.addEventListener('click', () => {
+// bejegyezzük az éppen aktuális kérdést
+logAnswer(current);
+// léptetés
+if(current < questions.length - 1){
+current += 1;
+renderQuestion(current);
+} else {
+// ha nincs több kérdés, kiírjuk az eredményt
+finishQuiz();
+}
+});
+
+
+finishBtn.addEventListener('click', () => {
+// rögzítjük az aktuális választ (ha még nincs rögzítve)
+logAnswer(current);
+finishQuiz();
+});
+
+
+function finishQuiz(){
+// letiltjuk a gombokat és kiírjuk az összesített eredményt
+nextBtn.disabled = true;
+finishBtn.disabled = true;
+resultDiv.innerHTML = `Pontszám: <strong>${score}</strong> / ${questions.length}`;
+}
+
+
+// Kezdés
+renderQuestion(0);
 
