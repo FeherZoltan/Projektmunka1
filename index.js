@@ -50,6 +50,7 @@ const quizQuestions = [
     }
 ]
 let current = 0;
+let score = 0;
 const id = `q${n}_c${i}`;
 const label = document.createElement('label');
 label.style.display = 'block';
