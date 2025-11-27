@@ -16,7 +16,7 @@ const quizQuestions = [
         //3+1
         question: "Mi volt a szabadságharc végének szimbolikus dátuma (a világosi fegyverletétel)?",
         answers: ["1849. május 1.", "1849. június 13.", "1849. augusztus 13.", "1849. október 6."],
-        corrects: 2
+        corrects: 2,
     },
     
 ]
