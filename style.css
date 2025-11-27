@@ -5,8 +5,3 @@ body { padding-bottom: 40px; }
 
 .list-group-item { cursor: pointer; }
 .list-group-item input { margin-right: 10px; }
-
-
-@media (max-width: 576px) {
-  #question-text { font-size: 0.95rem; }
-}
