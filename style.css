@@ -7,19 +7,23 @@ body { padding-bottom: 40px; }
 .list-group-item input { margin-right: 10px; }
 
 
+
+
 body{
 	padding:1.5rem 1rem 3rem;
 	background: linear-gradient(180deg,#f8fafc 0%, #eef2ff 50%);
 	font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 	color:#222;
 }
-
 #answers-table{ border-collapse:separate; border-spacing:0; width:100%; }
 #answers-table thead th{ background:(#ffffff, #f7f9fc); border-bottom:2px solid rgba(0,0,0,0.04); }
 #answers-table tbody tr{ transition: background .12s ease; }
 #answers-table tbody tr td{ vertical-align:middle; }
 
 .btn-primary{ background: #0b57b6; border:0; }
-.btn-success{ background: (#28a745,#1e7e34); border:0; }
+
+.btn-success{ background: #28a745; border:0; }
+
+
 
 

@@ -122,92 +122,15 @@ document.addEventListener('DOMContentLoaded', () => {
     loadQuestion();
 });
 
-            q.options.forEach((opt, idx) => {
-                const label = document.createElement('label');
-                label.className = 'list-group-item d-flex align-items-center';
 
-                const radio = document.createElement('input');
-                radio.type = 'radio';
-                radio.name = 'option';
-                radio.value = idx;
-                radio.className = 'form-check-input me-2';
+function finishQuiz(){
+// letiltjuk a gombokat és kiírjuk az összesített eredményt
+nextBtn.disabled = true;
+finishBtn.disabled = true;
+resultDiv.innerHTML = `Pontszám: <strong>${score}</strong> / ${questions.length}`;
+}
 
-                radio.addEventListener('change', () => {
-                    nextBtn.disabled = false;
-                });
 
-                label.appendChild(radio);
-                label.appendChild(document.createTextNode(opt));
-                optionsEl.appendChild(label);
-            });
-
-            // Disable next until selection
-            nextBtn.disabled = true;
-        
-
-        function subjectClass(subject) {
-            if(subject === 'matematika') return 'subject-math';
-            if(subject === 'történelem') return 'subject-history';
-            if(subject === 'magyar') return 'subject-lit';
-            return '';
-        }
-
-        function addAnswerRow(questionObj, selectedText, correct) {
-            const tr = document.createElement('tr');
-            tr.className = subjectClass(questionObj.subject);
-
-            const noTd = document.createElement('td');
-            noTd.textContent = answersTbody.children.length + 1;
-
-            const subjTd = document.createElement('td');
-            subjTd.textContent = questionObj.subject;
-
-            const qTd = document.createElement('td');
-            qTd.textContent = questionObj.question;
-
-            const ansTd = document.createElement('td');
-            ansTd.textContent = selectedText;
-
-            const evalTd = document.createElement('td');
-            evalTd.textContent = correct ? 'Jó' : 'Hibás';
-
-            tr.appendChild(noTd);
-            tr.appendChild(subjTd);
-            tr.appendChild(qTd);
-            tr.appendChild(ansTd);
-            tr.appendChild(evalTd);
-
-            answersTbody.appendChild(tr);
-        }
-
-        nextBtn.addEventListener('click', () => {
-            const selected = document.querySelector('input[name="option"]:checked');
-            if (!selected) return;
-            const selectedIndex = Number(selected.value);
-            const q = questions[currentIndex];
-            const selectedText = q.options[selectedIndex];
-            const correct = selectedIndex === q.answer;
-            if (correct) score += 1;
-
-            addAnswerRow(q, selectedText, correct);
-
-            currentIndex += 1;
-            if (currentIndex < questions.length) {
-                loadQuestion();
-            } else {
-                // End of quiz
-                nextBtn.style.display = 'none';
-                resultsBtn.style.display = 'inline-block';
-            }
-        });
-
-        resultsBtn.addEventListener('click', () => {
-            totalScoreEl.textContent = `${score} / ${questions.length}`;
-            resultsContainer.style.display = 'block';
-            resultsBtn.disabled = true;
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            loadQuestion();
-        });
+// Kezdés
+renderQuestion(0);
 
