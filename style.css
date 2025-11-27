@@ -1,0 +1,12 @@
+body { padding-bottom: 40px; }
+.subject-math { background-color: blue; }
+.subject-history { background-color: red; }
+.subject-lit { background-color: yellow; }
+
+.list-group-item { cursor: pointer; }
+.list-group-item input { margin-right: 10px; }
+
+
+@media (max-width: 576px) {
+  #question-text { font-size: 0.95rem; }
+}
