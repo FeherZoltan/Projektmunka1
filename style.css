@@ -5,11 +5,10 @@ body { padding-bottom: 40px; }
 
 .list-group-item { cursor: pointer; }
 .list-group-item input { margin-right: 10px; }
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 18c8547d4a4dd934decac34a14f2723662efcad9
+
+
 body{
 	padding:1.5rem 1rem 3rem;
 	background: linear-gradient(180deg,#f8fafc 0%, #eef2ff 50%);
@@ -23,8 +22,7 @@ body{
 #answers-table tbody tr td{ vertical-align:middle; }
 .btn-primary{ background: ( #0b57b6); border:0; }
 .btn-success{ background: (#28a745,#1e7e34); border:0; }
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 18c8547d4a4dd934decac34a14f2723662efcad9
+
+

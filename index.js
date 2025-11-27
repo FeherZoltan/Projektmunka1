@@ -140,7 +140,7 @@ finishQuiz();
 
 
 function finishQuiz(){
-// letiltjuk a gombokat és kiírjuk az összesített eredményt
+
 nextBtn.disabled = true;
 finishBtn.disabled = true;
 resultDiv.innerHTML = `Pontszám: <strong>${score}</strong> / ${questions.length}`;
