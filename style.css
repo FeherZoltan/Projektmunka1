@@ -1,7 +1,7 @@
 body { padding-bottom: 40px; }
-.subject-math { background-color: blue; }
-.subject-history { background-color: red; }
-.subject-lit { background-color: yellow; }
+.subject-math { background-color: blue; color: white;}
+.subject-history { background-color: red; color: white; }
+.subject-lit { background-color: yellow; color: black; }
 
 .list-group-item { cursor: pointer; }
 .list-group-item input { margin-right: 10px; }
@@ -17,11 +17,9 @@ body{
 #answers-table{ border-collapse:separate; border-spacing:0; width:100%; }
 #answers-table thead th{ background:(#ffffff, #f7f9fc); border-bottom:2px solid rgba(0,0,0,0.04); }
 #answers-table tbody tr{ transition: background .12s ease; }
-#answers-table tbody tr:nth-child(odd){ background: rgba(255,255,255,0.6); }
 #answers-table tbody tr td{ vertical-align:middle; }
 
-.btn-primary{ background: ( #0b57b6); border:0; }
-.btn-primary{ background: ( #0b57b6); border:0; }
+.btn-primary{ background: #0b57b6; border:0; }
 .btn-success{ background: (#28a745,#1e7e34); border:0; }
 
 
